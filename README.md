@@ -32,9 +32,11 @@ if (Test-Path $VSCodeInstallerPath) {
 
 - Placer ce script dans un dossier partagé avec les utilisateurs. 
 - Placer le fichier `VSCodeSetup.exe` dans ce même fichier.
-- Créer une GPO dans l'OU <b>technique/utilisateur</b>. 
+- Créer une GPO dans l'OU <b>technique/utilisateur</b> dans le `Gestion de stratégie de groupe`
+- Modifier la GPO puis
 - Ajouter un éxecution de scripts d'ouverture/fermeture dans la Configuration utilisateur/Paramètres Windows/Scripts(ouverture/fermeture). 
 - Renseigner dans l'onglet <i>Script Powershell </i> le chemin complet du script ```\\w2022dc\Partage\installVscode.psi```
+- Appliquer la GPO.
 
 - Aller sur le post client.
 - Lancer la commande `Gpupdate /force`
@@ -46,3 +48,16 @@ if (Test-Path $VSCodeInstallerPath) {
 ### GPO 2: 
 
 #### Bloquer l'accès à <b>Microsoft Edge</b> pour tout les utilisatuers.
+
+- Dans l'application `Gestion de stratégie de groupe`
+- Créer une GPO pour l'ensemble des utilisateurs du groupe `non.local`
+- Modifier celle-ci en allant dans : `Paramètres Windows/Paramètres de sécurité/Stratégies de restriction logicielle`
+- Clique droit sur cette onglet, selectionner `Nouvelles stratégies de restriction logicielle` puis `Règles supplémentaires`
+- Clique droit sur `Nouvelle règle de chemin d'accès` puis rentrer le chemin d'accès au `.exe`de Microsoft Edge.
+
+- Appliquer la GPO. 
+
+
+- Aller sur le poste client.
+- Faire la commande `Gpupdate /force`
+- #### Ça fonctionne ! 
