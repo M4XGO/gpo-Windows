@@ -35,13 +35,12 @@ if (Test-Path $VSCodeInstallerPath) {
 - Créer une GPO dans l'OU <b>technique/utilisateur</b>. 
 - Ajouter un éxecution de scripts d'ouverture/fermeture dans la Configuration utilisateur/Paramètres Windows/Scripts(ouverture/fermeture). 
 - Renseigner dans l'onglet <i>Script Powershell </i> le chemin complet du script ```\\w2022dc\Partage\installVscode.psi```
-<br>
-<br>
+
 - Aller sur le post client.
 - Lancer la commande `Gpupdate /force`
 - Se déconnecter et se reconnecter du poste client. 
 
-#### Ça fonctionne ! 
+- #### Ça fonctionne ! 
 
 
 ### GPO 2: 
