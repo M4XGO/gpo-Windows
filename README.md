@@ -65,11 +65,11 @@ if (Test-Path $VSCodeInstallerPath) {
 
 ### GPO 3: 
 
-#### COnfigurer le Par-Feu windows defender pour tous les utilisateurs.
+#### Configurer le Par-Feu windows defender pour tous les utilisateurs.
 
 - Créer une nouvelle GPO puis la modifier. 
 - Aller dans `Configuration ordinateur/Stratégies/Paramètres Windows/Paramètres de Sécurité/Par-feu Windows Defender...`
-- Activé le par-feu, bloquer les connexions entrantes et autoriser les connexions sortantes dans l'onglet `Profile de domaine`.
+- Activer le par-feu, bloquer les connexions entrantes et autoriser les connexions sortantes dans l'onglet `Profile de domaine`.
 - Appliquer les changements. 
 - Appliquer la GPO.
 - Se rendre sur un poste client pour vérifier si la GPO à bien prix effet.
