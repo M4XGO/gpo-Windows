@@ -65,13 +65,13 @@ if (Test-Path $VSCodeInstallerPath) {
 
 ### GPO 3: 
 
-#### Restreindre la connexion aux ordinateur sur le réseaux en fonction des groupes.
+#### COnfigurer le Par-Feu windows defender pour tous les utilisateurs.
 
 - Créer une nouvelle GPO puis la modifier. 
-- Aller dans `Configuration ordinateur/Stratégies/Paramètres Windows/Paramètres de Sécurité/Stratégie locales/Attribution des droits utilisateurs`
-- Clique droit dessus pour créer une nouvelle `Accéder à cet ordinateur à partir du réseaux`
-- Ajouter les groupes (<b>TECH/DSI</b>)
-- Appliquer les changement. 
+- Aller dans `Configuration ordinateur/Stratégies/Paramètres Windows/Paramètres de Sécurité/Par-feu Windows Defender...`
+- Activé le par-feu, bloquer les connexions entrantes et autoriser les connexions sortantes dans l'onglet `Profile de domaine`.
+- Appliquer les changements. 
 - Appliquer la GPO.
-- Se rendre sur un poste client <b>DIR</b> pour vérifier si la GPO à bien prix effet.
+- Se rendre sur un poste client pour vérifier si la GPO à bien prix effet.
+- Faire la commande `gpupdate /force`
 - #### Ça fonctionne !
