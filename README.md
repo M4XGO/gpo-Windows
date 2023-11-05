@@ -61,3 +61,17 @@ if (Test-Path $VSCodeInstallerPath) {
 - Aller sur le poste client.
 - Faire la commande `Gpupdate /force`
 - #### Ça fonctionne ! 
+
+
+### GPO 3: 
+
+#### Restreindre la connexion aux ordinateur sur le réseaux en fonction des groupes.
+
+- Créer une nouvelle GPO puis la modifier. 
+- Aller dans `Configuration ordinateur/Stratégies/Paramètres Windows/Paramètres de Sécurité/Stratégie locales/Attribution des droits utilisateurs`
+- Clique droit dessus pour créer une nouvelle `Accéder à cet ordinateur à partir du réseaux`
+- Ajouter les groupes (<b>TECH/DSI</b>)
+- Appliquer les changement. 
+- Appliquer la GPO.
+- Se rendre sur un poste client <b>DIR</b> pour vérifier si la GPO à bien prix effet.
+- #### Ça fonctionne !
